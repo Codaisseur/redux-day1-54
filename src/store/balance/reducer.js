@@ -1,19 +1,23 @@
 // src/store/balance/reducer.js
 const initialState = {
-  amount: 0,
+  amount: 0, // 10
 };
 
-const regularAction = { type: "ADD_BALANCE", payload: 10 };
-// when it gets dispatched
-
+const action = { type: "ADD", payload: 10 };
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case "ADD_BALANCE": {
+    case "balance/ADD": {
+      console.log("did the reducer activate this case??");
       // do something here.
       // update the state.
       // +10 to the state.amount
       // +payload
-      return state;
+      // whatever we return from here
+      // is the new state.
+
+      return {
+        amount: state.amount + action.payload,
+      }; // { amount: 10 }
     }
     case "ANOTHER_ACTION": {
       return state;
