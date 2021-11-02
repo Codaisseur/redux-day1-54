@@ -2,7 +2,7 @@
 const initialState = {
   token: null,
   email: null,
-  name: null,
+  name: "Matias",
 };
 
 export default function reducer(state = initialState, action) {
